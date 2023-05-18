@@ -3,3 +3,12 @@ ul {
     margin: 0;
     padding: 0;
   }
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+body{
+    background-image: url(hatter.jpg);
+    }
