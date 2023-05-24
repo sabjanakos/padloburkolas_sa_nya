@@ -1398,7 +1398,6 @@ Category Post
   color: #8d99af;
   background-color: #fff;
   margin-right: 15px;
-  float: left;
 }
 
 .category-post .naccs .menu div h4 {
@@ -1435,7 +1434,6 @@ Category Post
   height: 132px;
   line-height: 132px;
   display: inline-block;
-  float: left;
   text-align: left;
   cursor: pointer;
   position: relative;
@@ -1554,7 +1552,6 @@ Category Post
   color: #8d99af;
   background-color: #fff;
   margin-right: 15px;
-  float: left;
   left: 0;
 }
 
