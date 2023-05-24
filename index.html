@@ -16,6 +16,35 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 #main {margin-left: 120px}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+.container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #017146;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #017146;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
 </style>
 </head>
 <body class="w3-black">
@@ -37,7 +66,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   </a>
   <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>Kapcsolat</p>
+    <p>Kapcsolat/Kal.</p>
   </a>
 </nav>
 
@@ -142,7 +171,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <!-- Testimonials -->
     <h3 class="w3-padding-24 w3-text-light-grey">Alkalmazottak</h3>  
     <img src="avatar1.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Sabján Ákos</span> Vezérigazgató / Regionális Vezető</p>
+    <p class="zold"><span class="w3-large w3-margin-right">Sabján Ákos</span> Vezérigazgató / Regionális Vezető</p>
     
     <img src="avatar1.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
     <p><span class="w3-large w3-margin-right">Nyitrai Attila</span> Vezérigazgató / Ügyvivő Főigazgató</p>
@@ -204,6 +233,36 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     </form>
   <!-- End Contact Section -->
   </div>
+  <div class="container">
+    <h2>Padlólap kalkulátor</h2>
+    <div class="form-group">
+      <label for="width">Szoba szélessége (m):</label>
+      <input type="number" id="width">
+    </div>
+    <div class="form-group">
+      <label for="length">Szoba hosszúsága (m):</label>
+      <input type="number" id="length">
+    </div>
+    <div class="form-group">
+      <label for="tile">Padlólap mérete (m<sup>2</sup>):</label>
+      <input type="number" id="tile">
+    </div>
+    <button onclick="calculate()">Kalkulálás</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculate() {
+      var width = document.getElementById("width").value;
+      var length = document.getElementById("length").value;
+      var tile = document.getElementById("tile").value;
+
+      var area = width * length;
+      var tilesNeeded = Math.ceil(area / tile);
+
+      document.getElementById("result").innerHTML = "Szükséges padlólapok száma: " + tilesNeeded;
+    }
+  </script>
   
     <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
